@@ -1,0 +1,25 @@
+{
+  "name": "BlackRoad-Archive",
+  "org": "BlackRoad-OS-Inc",
+  "category": "archive",
+  "title": "BlackRoad Archive",
+  "deploy": {
+    "target": "gematria",
+    "path": "/var/www/blackroad/BlackRoad-Archive",
+    "ssl": "auto",
+    "cdn": true
+  },
+  "mirrors": {
+    "gitea": "https://git.blackroad.io/BlackRoad-OS-Inc/BlackRoad-Archive",
+    "github": "https://github.com/BlackRoad-OS-Inc/BlackRoad-Archive"
+  },
+  "ci": {
+    "on_push": ["build", "deploy"],
+    "on_pr": ["lint", "audit"]
+  },
+  "monitoring": {
+    "uptime": true,
+    "analytics": "roadanalytics",
+    "alerts": "nats"
+  }
+}
